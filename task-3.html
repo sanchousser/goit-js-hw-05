@@ -22,8 +22,9 @@
                 return this.items.push(item)
             }
 
+
             removeItem(item) {
-                return this.items.filter(e => e !== item)
+                return this.items.splice(this.items.indexOf(item), 1);
             }
         }
 
