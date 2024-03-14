@@ -10,23 +10,29 @@
 <body>
     <script type="module">
 
-            /*
-             * Додай статичний метод `getSpecs(car)`,
-             * який приймає об'єкт-машину як параметр і виводить
-             * в консоль значення властивостей maxSpeed, speed, isOn, distance и price.
-             */
+        /*
+         * Додай статичний метод `getSpecs(car)`,
+         * який приймає об'єкт-машину як параметр і виводить
+         * в консоль значення властивостей maxSpeed, speed, isOn, distance и price.
+         */
 
-            /*
-             * Конструктор отримує об'єкт налаштувань.
-             *
-             * Додай властивості майбутнього екземпляра класу:
-             * speed - поточна швидкість, початкова 0
-             * price - ціна автомобіля
-             * maxSpeed - максимальна швидкість
-             * isOn - заведений автомобіль, значення true або false. Спочатку false
-             * distance - загальний кілометраж, спочатку 0
-             */
-             class Car {
+        /*
+         * Конструктор отримує об'єкт налаштувань.
+         *
+         * Додай властивості майбутнього екземпляра класу:
+         * speed - поточна швидкість, початкова 0
+         * price - ціна автомобіля
+         * maxSpeed - максимальна швидкість
+         * isOn - заведений автомобіль, значення true або false. Спочатку false
+         * distance - загальний кілометраж, спочатку 0
+         */
+
+        class Car {
+
+            static getSpecs(car) {
+                console.log(car.maxSpeed, car.speed, car.isOn, car.distance, car._price);
+            }
+
             constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
                 this.speed = speed;
                 this._price = price;
@@ -35,9 +41,7 @@
                 this.distance = distance;
             }
 
-            static getSpecs(car) {
-                console.log(car.maxSpeed, car.speed, car.isOn, car.distance, car._price);
-            }
+
 
             get price() {
                 return this._price;
@@ -57,11 +61,11 @@
             }
 
             accelerate(value) {
-                this.speed += value <= this.maxSpeed ? speed += value : 0;
+                this.speed + value <= this.maxSpeed ? this.speed += value : 0;
             }
 
             decelerate(value) {
-                this.speed -= value >= 0 ? speed -= value : 0;
+                this.speed - value >= 0 ? this.speed -= value : 0;
             }
 
             drive(hours) {
